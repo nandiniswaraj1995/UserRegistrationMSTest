@@ -53,30 +53,6 @@ namespace UserRegistration
             }
 
         }
-        public bool isValidEmail(string email)
-        {
-            string emailRegex = "^[a-z0-9A-Z]+([._+-][a-z0-9A-Z]+)*[@][a-z0-9A-Z]+[.][a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$";
-            Regex regex = new Regex(emailRegex);
-            try
-            {
-                if (regex.IsMatch(email))
-                {
-                    return true;
-                }
-                else
-                {
-                    throw new UserException(UserException.ExceptionType.INVALID_EMAIL_ID, "Invalid_Email_Id");
-                }
-
-            }
-            catch (UserException ex)
-            {
-                Console.WriteLine(ex.Message);
-                return false;
-            }
-
-        }
-
-
+      
     }
 }
