@@ -19,6 +19,10 @@ namespace UserRegistration
             Console.WriteLine("Enter Mobile_Number:");
             string mobile = Console.ReadLine();
             Console.WriteLine(patter.isValidMobileNumber(mobile));
+            Console.WriteLine("Enter Password:");
+            string password = Console.ReadLine();
+            Console.WriteLine(patter.isValidPassword(password));
+
 
 
 

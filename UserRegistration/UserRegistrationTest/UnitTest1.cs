@@ -52,7 +52,20 @@ namespace UserRegistrationTest
         [TestMethod]
         public void Given_Invalid_Mobile_Number_Should_Returrns_False()
         {
-            bool result = pattern.isValidEmail("1234567890");
+            bool result = pattern.isValidMobileNumber("1234567890");
+            Assert.AreNotEqual(true, result);
+        }
+
+        [TestMethod]
+        public void Given_Password_Have_Minimum_8_Character_Should_Returrns_True()
+        {
+            bool result = pattern.isValidPassword("addfdsfA2df");
+            Assert.AreEqual(true, result);
+        }
+        [TestMethod]
+        public void Given_Password_Have_Less_Then_8_Character_Should_Returrns_False()
+        {
+            bool result = pattern.isValidPassword("asdf");
             Assert.AreNotEqual(true, result);
         }
 

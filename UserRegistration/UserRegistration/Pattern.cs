@@ -99,6 +99,31 @@ namespace UserRegistration
             }
 
         }
+        public bool isValidPassword(string password)
+        {
+            string passwordRegex = "^[a-zA-Z0-9]{8,}$";
+            Regex regex = new Regex(passwordRegex);
+            try
+            {
+                if (regex.IsMatch(password))
+                {
+                    return true;
+                }
+                else
+                {
+                    throw new UserException(UserException.ExceptionType.INVALID_PASSWORD, "Invalid_Password,Password must have pass all rules !");
+                }
+
+            }
+            catch (UserException ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+
+        }
+
+
 
 
 
