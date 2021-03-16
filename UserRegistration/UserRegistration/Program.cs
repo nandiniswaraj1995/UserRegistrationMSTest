@@ -16,6 +16,9 @@ namespace UserRegistration
             Console.WriteLine("Enter Email_Id:");
             string email = Console.ReadLine();
             Console.WriteLine(patter.isValidEmail(email));
+            Console.WriteLine("Enter Mobile_Number:");
+            string mobile = Console.ReadLine();
+            Console.WriteLine(patter.isValidMobileNumber(mobile));
 
 
 

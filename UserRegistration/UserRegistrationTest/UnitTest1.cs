@@ -43,6 +43,19 @@ namespace UserRegistrationTest
             bool result = pattern.isValidEmail("nandini12@gmail.com.com.co");
             Assert.AreNotEqual(true, result);
         }
+        [TestMethod]
+        public void Given_Valid_Mobile_Number_Should_Returrns_True()
+        {
+            bool result = pattern.isValidMobileNumber("91 9123456780");
+            Assert.AreEqual(true, result);
+        }
+        [TestMethod]
+        public void Given_Invalid_Mobile_Number_Should_Returrns_False()
+        {
+            bool result = pattern.isValidEmail("1234567890");
+            Assert.AreNotEqual(true, result);
+        }
+
 
 
 
