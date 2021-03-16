@@ -22,16 +22,16 @@ namespace UserRegistrationTest
         [TestMethod]
         public void Given_Valid_Last_Name_Should_Returrns_True()
         {
-            bool result = pattern.isValidFirstName("Swaraj");
+            bool result = pattern.isValidLastName("Swaraj");
             Assert.AreEqual(true, result);
         }
         [TestMethod]
         public void Given_Invalid_Last_Name_Should_Returrns_False()
         {
-            bool result = pattern.isValidFirstName("swaraj");
+            bool result = pattern.isValidLastName("swaraj");
             Assert.AreNotEqual(true, result);
         }
-
+       
 
     }
 }
