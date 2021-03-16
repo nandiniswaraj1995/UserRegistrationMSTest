@@ -80,6 +80,18 @@ namespace UserRegistrationTest
             bool result = pattern.isValidPassword("asdfghjcvcv");
             Assert.AreNotEqual(true, result);
         }
+        [TestMethod]
+        public void Given_Password_Have_Minimum_1_Upper_And_1_Numeric_Character_Should_Returrns_True()
+        {
+            bool result = pattern.isValidPassword("AAAAAA2AAAAAAA");
+            Assert.AreEqual(true, result);
+        }
+        [TestMethod]
+        public void Given_Password_Have_No_1_Upper_And_1_Numeric_Character_Should_Returrns_True()
+        {
+            bool result = pattern.isValidPassword("asdfghjcvcv");
+            Assert.AreNotEqual(true, result);
+        }
 
 
 
