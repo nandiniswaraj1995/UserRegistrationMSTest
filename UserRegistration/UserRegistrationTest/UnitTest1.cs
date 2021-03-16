@@ -31,7 +31,20 @@ namespace UserRegistrationTest
             bool result = pattern.isValidLastName("swaraj");
             Assert.AreNotEqual(true, result);
         }
-       
+        [TestMethod]
+        public void Given_Valid_Email_Id_Should_Returrns_True()
+        {
+            bool result = pattern.isValidEmail("nasdsf@gmail.com");
+            Assert.AreEqual(true, result);
+        }
+        [TestMethod]
+        public void Given_Invalid_Email_Id_Should_Returrns_False()
+        {
+            bool result = pattern.isValidEmail("nandini12@gmail.com.com.co");
+            Assert.AreNotEqual(true, result);
+        }
+
+
 
     }
 }
