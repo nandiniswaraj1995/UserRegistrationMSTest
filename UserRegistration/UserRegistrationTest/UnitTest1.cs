@@ -19,6 +19,19 @@ namespace UserRegistrationTest
             bool result = pattern.isValidFirstName("nandini");
             Assert.AreNotEqual(true, result);
         }
+        [TestMethod]
+        public void Given_Valid_Last_Name_Should_Returrns_True()
+        {
+            bool result = pattern.isValidFirstName("Swaraj");
+            Assert.AreEqual(true, result);
+        }
+        [TestMethod]
+        public void Given_Invalid_Last_Name_Should_Returrns_False()
+        {
+            bool result = pattern.isValidFirstName("swaraj");
+            Assert.AreNotEqual(true, result);
+        }
+
 
     }
 }
