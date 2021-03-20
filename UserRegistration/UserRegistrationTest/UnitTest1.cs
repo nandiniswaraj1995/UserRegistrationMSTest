@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using UserRegistration;
 namespace UserRegistrationTest
 {
@@ -87,7 +88,7 @@ namespace UserRegistrationTest
             Assert.AreEqual(true, result);
         }
         [TestMethod]
-        public void Given_Password_Have_No_1_Upper_And_1_Numeric_Character_Should_Returrns_True()
+        public void Given_Password_Have_No_1_Upper_And_1_Numeric_Character_Should_Returrns_False()
         {
             bool result = pattern.isValidPassword("asdfghjcvcv");
             Assert.AreNotEqual(true, result);
@@ -99,13 +100,12 @@ namespace UserRegistrationTest
             Assert.AreEqual(true, result);
         }
         [TestMethod]
-        public void Given_Password_Have_No_Any_Of_1_Upper_And_1_Numeric_1_Special_Character_Should_Returrns_True()
+        public void Given_Password_Have_No_Any_Of_1_Upper_And_1_Numeric_1_Special_Character_Should_Returrns_False()
         {
             bool result = pattern.isValidPassword("asdAghjcvcv");
             Assert.AreNotEqual(true, result);
         }
-
-
+       
 
 
 

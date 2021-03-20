@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace UserRegistration
 {
@@ -22,6 +23,21 @@ namespace UserRegistration
             Console.WriteLine("Enter Password:");
             string password = Console.ReadLine();
             Console.WriteLine(patter.isValidPassword(password));
+            List<string> validEmails = new List<string>()
+            { "abc@yahoo.com", "abc-100@yahoo.com" ,"abc.100@yahoo.com","abc111@abc.com","abc-100@abc.net",
+                "abc.100@abc.com.au","abc@1.com","abc@gmail.com.com","abc+100@gmail.com"};
+
+            List<bool> validResult = patter.isValidEmailList(validEmails);
+            foreach(bool vr in validResult)
+                Console.WriteLine(vr);
+
+            List<string> invalidEmails = new List<string>()
+            {"abc","abc@.com.my","abc123@gmail.a","abc123@.com","abc123@.com.com",".abc@abc.com","abc()*@gmail.com",
+             "abc@%*.com","abc..2002@gmail.com}","abc.@gmail.com","abc@abc@gmail.com","abc@gmail.com.1a","abc@gmail.com.aa.au" };
+
+            List<bool> invalidResult = patter.isValidEmailList(invalidEmails);
+            foreach(bool ir in invalidResult)
+                Console.WriteLine(ir);
 
 
 
