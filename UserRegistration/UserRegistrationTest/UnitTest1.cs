@@ -105,8 +105,43 @@ namespace UserRegistrationTest
             bool result = pattern.isValidPassword("asdAghjcvcv");
             Assert.AreNotEqual(true, result);
         }
+        [TestMethod]
+        [DataRow("abc@yahoo.com")]
+        [DataRow("abc-100@yahoo.com")]
+        [DataRow("abc.100@yahoo.com")]
+        [DataRow("abc111@abc.com")]
+        [DataRow("abc-100@abc.net")]
+        [DataRow("abc.100@abc.com.au")]
+        [DataRow("abc@gmail.com.com")]
+        [DataRow("abc+100@gmail.com")]
+        public void Given_Valid_Email_List_Should_Returrns_True(string validEmails)
+        {
+            Pattern pattern = new Pattern();
+            Assert.IsTrue(pattern.isValidEmail(validEmails));
 
-      
+        }
+        [TestMethod]
+        [DataRow("abc")]
+        [DataRow("abc@.com.my")]
+        [DataRow("abc123@gmail.a")]
+        [DataRow("abc123@.com")]
+        [DataRow("abc123@.com.com")]
+        [DataRow(".abc@abc.com")]
+        [DataRow("abc()*@gmail.com")]
+        [DataRow("abc@%*.com")]
+        [DataRow("abc..2002@gmail.com}")]
+        [DataRow("abc.@gmail.com")]
+        [DataRow("abc@abc@gmail.com")]
+        [DataRow("abc@gmail.com.1a")]
+        [DataRow("abc@gmail.com.aa.au")]
+        public void Given_Invalid_Email_List_Should_Returrns_False(string invalisEmails)
+        {
+            Pattern pattern = new Pattern();
+            Assert.IsFalse(pattern.isValidEmail(invalisEmails));
+
+        }
+
+
 
 
 
