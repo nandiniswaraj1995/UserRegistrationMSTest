@@ -8,7 +8,7 @@ namespace UserRegistration
         static void Main(string[] args)
         {
             Pattern patter = new Pattern();
-            Console.WriteLine("Enter First_Name:");
+          /*  Console.WriteLine("Enter First_Name:");
             string firstName = Console.ReadLine();
             Console.WriteLine(patter.isValidFirstName(firstName));
             Console.WriteLine("Enter Last_Name:");
@@ -22,22 +22,39 @@ namespace UserRegistration
             Console.WriteLine(patter.isValidMobileNumber(mobile));
             Console.WriteLine("Enter Password:");
             string password = Console.ReadLine();
-            Console.WriteLine(patter.isValidPassword(password));
-            List<string> validEmails = new List<string>()
+            Console.WriteLine(patter.isValidPassword(password));*/
+            List<string> validEmailList = new List<string>()
             { "abc@yahoo.com", "abc-100@yahoo.com" ,"abc.100@yahoo.com","abc111@abc.com","abc-100@abc.net",
                 "abc.100@abc.com.au","abc@1.com","abc@gmail.com.com","abc+100@gmail.com"};
-
-            List<bool> validResult = patter.isValidEmailList(validEmails);
-            foreach(bool vr in validResult)
-                Console.WriteLine(vr);
-
-            List<string> invalidEmails = new List<string>()
+                
+            foreach (string emails in validEmailList)
+                {
+                    if (patter.isValidEmail(emails))
+                    {
+                        Console.WriteLine(true);
+                    }
+                    else
+                    {
+                    Console.WriteLine(false) ;
+                    }
+                }
+            
+            List<string> invalidEmailList = new List<string>()
             {"abc","abc@.com.my","abc123@gmail.a","abc123@.com","abc123@.com.com",".abc@abc.com","abc()*@gmail.com",
              "abc@%*.com","abc..2002@gmail.com}","abc.@gmail.com","abc@abc@gmail.com","abc@gmail.com.1a","abc@gmail.com.aa.au" };
 
-            List<bool> invalidResult = patter.isValidEmailList(invalidEmails);
-            foreach(bool ir in invalidResult)
-                Console.WriteLine(ir);
+                foreach (string emails in invalidEmailList)
+                {
+                    if (patter.isValidEmail(emails))
+                    {
+                        Console.WriteLine(false);
+                    }
+                    else
+                    {
+                    Console.WriteLine(false);
+                    }
+                }
+           
 
 
 

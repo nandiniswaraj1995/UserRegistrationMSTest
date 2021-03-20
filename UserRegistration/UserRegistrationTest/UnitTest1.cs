@@ -105,8 +105,8 @@ namespace UserRegistrationTest
             bool result = pattern.isValidPassword("asdAghjcvcv");
             Assert.AreNotEqual(true, result);
         }
-       
 
+      
 
 
 

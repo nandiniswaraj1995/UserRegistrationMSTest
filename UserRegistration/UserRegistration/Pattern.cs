@@ -122,24 +122,6 @@ namespace UserRegistration
 
         }
 
-        public  List<bool> isValidEmailList(List<string> emailList)
-        {
-            List<bool> valid = new List<bool>();
-            string emailRegex = "^[a-z0-9A-Z]+([._+-][a-z0-9A-Z]+)*[@][a-z0-9A-Z]+[.][a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$";
-            Regex regex = new Regex(emailRegex);
-                foreach (string email in emailList)
-                {
-                   if (regex.IsMatch(email))
-                    {
-                    valid.Add(true);
-                    }
-                    else
-                    {
-                    valid.Add(false);
-                    }
-                }
-            return valid;
-        }
           
 
 
