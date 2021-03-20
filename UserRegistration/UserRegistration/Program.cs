@@ -8,7 +8,7 @@ namespace UserRegistration
         static void Main(string[] args)
         {
             Pattern patter = new Pattern();
-          /*  Console.WriteLine("Enter First_Name:");
+             Console.WriteLine("Enter First_Name:");
             string firstName = Console.ReadLine();
             Console.WriteLine(patter.isValidFirstName(firstName));
             Console.WriteLine("Enter Last_Name:");
@@ -22,7 +22,7 @@ namespace UserRegistration
             Console.WriteLine(patter.isValidMobileNumber(mobile));
             Console.WriteLine("Enter Password:");
             string password = Console.ReadLine();
-            Console.WriteLine(patter.isValidPassword(password));*/
+            Console.WriteLine(patter.isValidPassword(password));
             List<string> validEmailList = new List<string>()
             { "abc@yahoo.com", "abc-100@yahoo.com" ,"abc.100@yahoo.com","abc111@abc.com","abc-100@abc.net",
                 "abc.100@abc.com.au","abc@1.com","abc@gmail.com.com","abc+100@gmail.com"};
